@@ -1,0 +1,15 @@
+%table
+- post_index = 0
+- @posts.each do |post| 
+	- post_index = post_index + 1
+	%div
+		%table
+			%tr
+				%td(width='20px')= "#{post_index}."
+				%td
+					%a(href="#{post.url}")= post.title
+			%tr
+				%td
+				%td
+					.byline
+						%label= "by #{post.author} -  #{post.get_time_since_post}"

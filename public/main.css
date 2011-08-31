@@ -1,0 +1,42 @@
+body
+{
+	font-family: 'Verdana, Helvetica';
+	font-size: 12px;
+	margin:10px;
+}
+
+.byline
+{
+	font-size: 8px;
+	color:gray;
+}
+
+.titlebar
+{
+	background-color:navy;
+	color: white;
+	width:100%;
+}
+
+.titlecopy
+{
+	font-size:35px;
+	margin-left: 5px;
+}
+
+a
+{
+	text-decoration:none;
+	font-family: 'Verdana, Helvetica';
+}
+
+a.titlecopy
+{
+	color: orange;
+	font-size : 15px;
+}
+
+.content
+{
+	margin-top:20px;
+}

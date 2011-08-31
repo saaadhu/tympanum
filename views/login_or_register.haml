@@ -1,0 +1,29 @@
+%form(method='post' action='/authenticate')
+	%table(cellspacing='15')
+		%tr
+			%td UserId
+			%td
+				%input(type='text' name='user' autofocus='autofocus')
+		%tr
+			%td Password
+			%td	
+				%input(type='password' name='password')
+		%tr
+			%td(colspan='2')
+				%input(type='submit' value='Login')
+
+%form(method='post' action='/register')
+	%table(cellspacing='15')
+		%tr
+			%td UserId
+			%td
+				%input(type='text' name='user')
+		%tr
+			%td Password
+			%td	
+				%input(type='password' name='password')
+		%tr
+			%td(colspan='2')
+				%input(type='submit' value='Register')
+
+

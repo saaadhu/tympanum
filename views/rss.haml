@@ -1,0 +1,10 @@
+%rss(version='2.0')
+	%channel
+		%title Tympanum
+		%link http://senthilthecoder.com/tympanum	
+		%description Stuff interesting to Atmel developers
+		- @posts.each do |post|
+			%item
+				%title= post.title
+				%link= post.url
+		
