@@ -3,7 +3,6 @@ require 'sinatra'
 require './post.rb'
 require 'haml'
 require './user.rb'
-require './rss.rb'
 
 enable :sessions
 
