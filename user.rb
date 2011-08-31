@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'tympanumdb.rb'
+require 'tympanumdb'
 
 class User
 	attr_accessor :id, :password
