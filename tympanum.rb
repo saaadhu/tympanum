@@ -1,9 +1,9 @@
 require 'rubygems'
 require 'sinatra'
-require 'post'
+require './post.rb'
 require 'haml'
-require 'user'
-require 'rss'
+require './user.rb'
+require './rss.rb'
 
 enable :sessions
 

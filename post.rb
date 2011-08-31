@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'tympanumdb'
+require './tympanumdb.rb'
 
 class Post
 	attr_accessor :author, :title, :url
