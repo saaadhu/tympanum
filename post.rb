@@ -42,7 +42,10 @@ class Post
 		url_parts.shift(1) #Exclude http
 		url_parts.reject! { |part| part === /com|net|www|org|biz|in|info/ }
 
-		@title.split(/[ -]/) + url_parts.reject(&:empty?)
+		title_parts = @title.split /[ -]/
+		tile_parts.reject! { |part| part === /^\d+$/ }
+
+		title_parts + url_parts.reject(&:empty?)
 	end
 
 	def Post.find_recent_posts()
