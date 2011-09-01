@@ -40,10 +40,10 @@ class Post
 	def find_keywords
 		url_parts = @url.split(/[\/\. -]/)
 		url_parts.shift(1) #Exclude http
-		url_parts.reject! { |part| part === /com|net|www|org|biz|in|info/ }
+		url_parts.reject! { |part| /com|net|www|org|biz|in|info/ === part }
 
 		title_parts = @title.split /[ -]/
-		title_parts.reject! { |part| part === /^\d+$/ }
+		title_parts.reject! { |part| /^\d+$/ === part }
 
 		title_parts + url_parts.reject(&:empty?)
 	end
