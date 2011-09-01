@@ -43,7 +43,7 @@ class Post
 		url_parts.reject! { |part| part === /com|net|www|org|biz|in|info/ }
 
 		title_parts = @title.split /[ -]/
-		tile_parts.reject! { |part| part === /^\d+$/ }
+		title_parts.reject! { |part| part === /^\d+$/ }
 
 		title_parts + url_parts.reject(&:empty?)
 	end
