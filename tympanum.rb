@@ -16,6 +16,11 @@ get '/rss' do
 	haml :rss, :layout => false
 end
 
+get '/search' do
+	@query = params[:query]
+	@results = Post.search(@query)
+	haml :searchresults
+end
 
 get '/authenticate' do
 	haml :login_or_register

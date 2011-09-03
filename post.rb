@@ -9,6 +9,7 @@ class Post
 		@timestamp = timestamp
 	end
 
+
 	def get_time_since_post
 		diff_seconds = Time.now.to_i - @timestamp
 
@@ -45,13 +46,27 @@ class Post
 		title_parts = @title.split /[ -]/
 		title_parts.reject! { |part| /^\d+$|in|or|and/ === part }
 
-		title_parts + url_parts.reject(&:empty?)
+		keywords = title_parts + url_parts.reject(&:empty?)
+		keywords.map &:downcase
 	end
 
 	def Post.find_recent_posts()
 		posts_bson = TympanumDB.posts.
 			find().sort([[:timestamp, -1]]).limit(20)
+		create_posts posts_bson
+	end
 
+	def Post.search (query)
+		keywords = query.split().map &:downcase
+		posts_bson = TympanumDB.posts.
+			find(
+				{ :keywords => { :$all => keywords } }).
+			sort([[:timestamp, -1]]).
+			limit(20)
+		create_posts posts_bson
+	end
+
+	def Post.create_posts(posts_bson)
 		posts = []
 		posts_bson.each do |post_bson| 
 			post = Post.new(

@@ -7,9 +7,15 @@
 		.titlebar
 			%span.titlecopy
 				Tympanum
+			%a.titlecopy(href='/') home 
+			|
 			%a.titlecopy(href='/posts/new') submit 
 			|
 			%a.titlecopy(href='/rss') rss	
+			.searchbox
+				%form(method='get' action='/search')
+					%input(type='text' name='query')
+					%input(type='submit' value='Search')
 
 		.content
 			= yield
