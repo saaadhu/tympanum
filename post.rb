@@ -48,6 +48,7 @@ class Post
 
 		keywords = title_parts + url_parts.reject(&:empty?)
 		keywords.map &:downcase
+		keywords.uniq
 	end
 
 	def Post.find_recent_posts()
