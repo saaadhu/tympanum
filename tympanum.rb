@@ -7,7 +7,14 @@ require './user.rb'
 enable :sessions
 
 get '/' do
+	@page_number = 0
 	@posts = Post.find_recent_posts
+	haml :index
+end
+
+get '/pages/:number' do
+    @page_number = params[:number].to_i
+	@posts = Post.find_posts(@page_number)
 	haml :index
 end
 

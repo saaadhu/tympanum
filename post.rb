@@ -2,7 +2,10 @@ require 'rubygems'
 require './tympanumdb.rb'
 
 class Post
+	@posts_in_page = 20
+
 	attr_accessor :author, :title, :url
+	attr_accessor :posts_in_page
 
 	def initialize(author, title, url, timestamp)
 		@author, @title, @url = author, title, url
@@ -52,8 +55,12 @@ class Post
 	end
 
 	def Post.find_recent_posts()
+		find_posts(0)
+	end
+
+	def Post.find_posts(page_number)
 		posts_bson = TympanumDB.posts.
-			find().sort([[:timestamp, -1]]).limit(20)
+			find().sort([[:timestamp, -1]]).skip(@posts_in_page * page_number).limit(@posts_in_page)
 		create_posts posts_bson
 	end
 

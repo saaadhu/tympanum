@@ -1,20 +1,19 @@
 body
 {
-	font-family: Verdana;
-	font-size: 12px;
-	margin:10px;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 10pt;
+	margin-top: 2px;
 }
 
 .byline
 {
-	font-size: 8px;
+	font-size: 8pt;
 	color:gray;
 }
 
 .titlebar
 {
-	background-color:navy;
-	color: white;
+	color: #CCCCFF;
 	width:100%;
 }
 
@@ -35,16 +34,33 @@ body
 a
 {
 	text-decoration:none;
-	font-family: 'Verdana, Helvetica';
+	font-family: Verdana, Arial, Sans-Serif;
 }
 
 a.titlecopy
 {
 	color: orange;
-	font-size : 15px;
+	font-size : 12pt;
 }
 
 .content
 {
 	margin-top:20px;
+	margin-left:5px;
 }
+
+.previousnext
+{
+	margin-top:30px;
+	margin-left: 5px;
+}
+
+.previous
+{
+	margin-right: 30px;
+}
+.next
+{
+	margin-left: 30px;
+}
+
