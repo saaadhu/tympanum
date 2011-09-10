@@ -17,9 +17,8 @@
 .previousnext
 	%span(class='previous')
 		- if @page_number != 0
-			%a(href="/pages/#{@page_number-1}") Previous
-		- else
-			%label &lt; Previous
+			%a(href="/pages/#{@page_number-1}") 
+		%label &lt; Previous
 
 	%span(class='next')
 		%a(href="/pages/#{@page_number+1}" valign='right') Next &gt;
