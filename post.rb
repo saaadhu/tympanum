@@ -50,7 +50,7 @@ class Post
 		title_parts.reject! { |part| /^\d+$|^(in|or|and)$/ === part }
 
 		keywords = title_parts + url_parts.reject(&:empty?)
-		keywords.map &:downcase
+		keywords.map! &:downcase
 		keywords.uniq
 	end
 
