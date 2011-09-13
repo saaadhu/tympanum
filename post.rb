@@ -42,7 +42,7 @@ class Post
 	end
 
 	def find_keywords
-		url_parts = @url.split(/[\/\. \+]/)
+		url_parts = @url.split(/[\/\. \+\&\?\=]/)
 		url_parts.shift(1) #Exclude http
 		url_parts.reject! { |part| /^(com|net|www|org|biz|aspx|asp|php|html|in|info)$|^\d+$/ === part }
 
